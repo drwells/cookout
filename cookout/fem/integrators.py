@@ -5,7 +5,7 @@ Time integrators in 1D.
 """
 import numpy as np
 import scipy.sparse.linalg as splg
-import ArchiveDictionary as ad
+from ..core import ArchiveDictionary as ad
 import operators as op
 
 
