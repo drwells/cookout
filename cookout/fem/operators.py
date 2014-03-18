@@ -87,6 +87,11 @@ class Operators1D(object):
 
     def _get_matrix(self, local_matrix_function):
         """Assemble a global matrix from a local matrix function.
+
+        Arguments:
+        - `local_matrix_function`: function returning a local matrix
+          given arguments of polynomial order and element length (see
+          local_matrices.py)
         """
         rows = list()
         columns = list()
@@ -111,6 +116,11 @@ class Operators1D(object):
 def set_boundary_condition_rows(matrix, value=0.0):
     """Set the first and last rows of a matrix to a scalar along the
     main diagonal and zero otherwise.
+
+    Arguments:
+    - `matrix`: sparse CSR matrix which will be modified *in place*.
+    - `value`: new value of the first and last entries of the main
+      diagonal. Defaults to 0.0.
     """
     if not sp.csr.isspmatrix_csr(matrix):
         raise NotImplementedError("Internal formats besides CSR are "

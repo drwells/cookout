@@ -16,9 +16,9 @@ def trapezoid_step(operators, forcing, coeffs, operator_lhs, previous_solution,
     Arguments:
     - `operators`: an instance of Operators1D.
     - `forcing`: forcing function, capable of taking numpy arrays as
-                 input: see the `get_load_vector` of Operators1D.
+      input: see the `get_load_vector` of Operators1D.
     - `coeffs`: coefficients for the linear problem. Should be a
-                dictionary with keys 'diffusion' and 'convection'.
+      dictionary with keys 'diffusion' and 'convection'.
     - `operator_lhs`: a factorized linear system (see
       scipy.sparse.linalg.factorized)
     - `previous_solution`: solution at `time - stepstep`.
@@ -50,13 +50,13 @@ def time_integrate(operators, forcing, coeffs, times, initial,
     Arguments:
     - `operators`: an instance of Operators1D.
     - `forcing`: forcing function, capable of taking numpy arrays as
-                 input: see the `get_load_vector` of Operators1D.
+      input: see the `get_load_vector` of Operators1D.
     - `coeffs`: coefficients for the linear problem. Should be a
-                dictionary with keys 'diffusion' and 'convection'.
+      dictionary with keys 'diffusion' and 'convection'.
     - `times`: time indices.
     - `initial`: Initial value of solution.
     - `constant_load`: truth-value of whether or not the load vector
-                       varies in time. Defaults to False.
+      varies in time. Defaults to False.
     - `solver`: time integrator to use. Defaults to 'trapezoid'.
 
     Returns:

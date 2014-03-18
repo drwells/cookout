@@ -39,16 +39,11 @@ gauss_weights = 0.5*np.array([
 
 
 def mass(order, h):
-    """
-    Calculate the local mass matrix of a 1D finite element.
+    """Calculate the local mass matrix of a 1D finite element.
 
-    Required Arguments
-    ------------------
-    order:
-        Polynomial order of the local basis functions.
-
-    h:
-        Length of the current element.
+    Arguments:
+    - `order`: Polynomial order of the local basis functions.
+    - `h`: Length of the current element.
     """
     if order == 1:
         return np.array([
@@ -69,16 +64,11 @@ def mass(order, h):
 
 
 def convection(order, h):
-    """
-    Calculate the local convection matrix of a 1D finite element.
+    """Calculate the local convection matrix of a 1D finite element.
 
-    Required Arguments
-    ------------------
-    order:
-        Polynomial order of the local basis functions.
-
-    h:
-        Length of the current element.
+    Arguments:
+    - `order`: Polynomial order of the local basis functions.
+    - `h`: Length of the current element.
     """
     if order == 1:
         return np.array([
@@ -99,16 +89,11 @@ def convection(order, h):
 
 
 def stiffness(order, h):
-    """
-    Calculate the local stiffness matrix of a 1D finite element.
+    """Calculate the local stiffness matrix of a 1D finite element.
 
-    Required Arguments
-    ------------------
-    order:
-        Polynomial order of the local basis functions.
-
-    h:
-        Length of the current element.
+    Arguments:
+    - `order`: Polynomial order of the local basis functions.
+    - `h`: Length of the current element.
     """
     if order == 1:
         return np.array([
@@ -128,18 +113,14 @@ def stiffness(order, h):
         raise NotImplementedError
 
 
-
-
 def values(order):
-    """
-    Evaluate the basis functions at the quadrature points. Rows of the
-    returned array correspond to basis functions and columns correspond
-    to quadrature points.
+    """Evaluate the basis functions at the quadrature points.
 
-    Required Arguments
-    ------------------
-    order:
-        Polynomial order of the local basis functions.
+    Rows of the returned array correspond to basis functions and columns
+    correspond to quadrature points.
+
+    Arguments:
+    - `order`: Polynomial order of the local basis functions.
     """
     values = list()
     basis = basis_function_lookup[order]
@@ -151,15 +132,14 @@ def values(order):
 
 
 def derivatives(order):
-    """
-    Evaluate the derivatives of the basis functions at the quadrature
-    points. Rows of the returned array correspond to basis functions and
-    columns correspond to quadrature points.
+    """Calculate the derivatives of the reference basis functions at the
+    quadrature points.
 
-    Required Arguments
-    ------------------
-    order:
-        Polynomial order of the local basis functions.
+    Rows of the returned array correspond to basis functions and columns
+    correspond to quadrature points.
+
+    Arguments:
+    - `order`: Polynomial order of the local basis functions.
     """
     values = list()
     basis = basis_function_lookup[order]
