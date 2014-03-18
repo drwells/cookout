@@ -128,33 +128,6 @@ def stiffness(order, h):
         raise NotImplementedError
 
 
-def hessian(order, h):
-    """
-    Calculate the local hessian matrix of a 1D finite element.
-
-    Required Arguments
-    ------------------
-    order:
-        Polynomial order of the local basis functions.
-
-    h:
-        Length of the current element.
-    """
-    if order == 1:
-        return np.array([[0.0, 0.0],
-                         [0.0, 0.0]])
-    elif order == 2:
-        return (1/h**3)*np.array([
-            [16.0, -32.0, 16.0],
-            [-32.0, 64.0, -32.0],
-            [16.0, -32.0, 16.0]])
-    elif order == 3:
-        return 1.0/h**3*np.array([[81,      -405.0/2,  162,      -81.0/2],
-                                  [-405.0/2, 567,      -1053.0/2, 162],
-                                  [162,     -1053.0/2, 567,      -405.0/2],
-                                  [-81.0/2,  162,      -405.0/2,  81]])
-    else:
-        raise NotImplementedError
 
 
 def values(order):
