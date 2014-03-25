@@ -4,7 +4,7 @@
 Class encapsulating the linear operators in 1D.
 """
 import numpy as np
-import local_matrices as lm
+import cookout.fem.local_matrices as lm
 import scipy.sparse as sp
 
 
